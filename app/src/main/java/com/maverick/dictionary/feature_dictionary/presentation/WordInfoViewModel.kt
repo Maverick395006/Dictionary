@@ -45,7 +45,6 @@ class WordInfoViewModel @Inject constructor(
                             isLoading = false
                         )
                     }
-
                     is Resource.Error -> {
                         _state.value = state.value.copy(
                             wordInfoItems = result.data ?: emptyList(),
@@ -57,7 +56,6 @@ class WordInfoViewModel @Inject constructor(
                             )
                         )
                     }
-
                     is Resource.Loading -> {
                         _state.value = state.value.copy(
                             wordInfoItems = result.data ?: emptyList(),
@@ -69,9 +67,7 @@ class WordInfoViewModel @Inject constructor(
         }
     }
 
-
     sealed class UIEvent {
         data class ShowSnackbar(val message: String) : UIEvent()
     }
-
 }
